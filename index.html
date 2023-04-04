@@ -10,25 +10,41 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
     <link rel="stylsheet" href="assets/css/styles.css">
     <title>Api Weather Doc</title>
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <h1>Weather App</h1>
-    </div>
+        <h2 id="current-day">
+            <p id="current-time"></p>
+        </h2>
+    </header>
 
-    <div class="row">
+    <section class="row" id="citysearch">
         <div class="col-sm-4">
 
 
             <form class="searchbar">
                 Search for a city:
                 <input type="text" id="city-input"><i class="fas fa-search" id="search-button"></i>
+                <button type="Submit" class="button">SEARCH</button>
             </form>
         </div>
-    </div>
+            
+
+
+
+
+
+
+        </div>
+    </section>
+    <section class="row2" id="weather">
+
+    </section>
 
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
