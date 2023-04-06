@@ -8,10 +8,10 @@
   flex-wrap: wrap;
 }
 
-.hero {
+.main {
   padding: 2%;
-  background-color:blue;
-  color: green;
+  background-color:lightblue;
+  color: rgb(203, 254, 203);
 }
 
 .main h2 {
@@ -28,11 +28,3 @@
   
 }
 
-#currentdate {
-  background-color: white;
-  color: black;
-  border: 2px solid black;
-  padding: 20px;
-  margin: 15px;
-  width: 100%;
-}
