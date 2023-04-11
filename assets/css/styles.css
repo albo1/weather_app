@@ -10,7 +10,7 @@
 
 .main {
   padding: 2%;
-  background-color:lightblue;
+  background-color:lightskyblue;
   color: rgb(203, 254, 203);
 }
 
@@ -48,29 +48,16 @@
       margin-bottom: 20px;
     }
   
-  .searchbar {
+  .search-bar {
   padding-top: 20px;
   padding-left: 5px
   }
-  
-  .fivedaycard {
-  background-color: #eef9ff; 
-  margin-left: 15px;
-  margin-top: 15px;
-  
+
+  .box {
+    display: inline-block;
+    background-color:lightskyblue;
+    color: white;
+    padding: 20px;
+    margin: 5px;
   }
-  
-  .fivedaycardcolor {
-      background-color: #e3f6ff;
-  }
-  
-  .list-group {
-      margin-top: 20px;
-      
-  }
-  
-  .day-forecast {
-      margin-top: 10px;
-      font-size: 30px;
-  
-  }
+

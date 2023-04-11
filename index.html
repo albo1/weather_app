@@ -19,11 +19,15 @@
         </h2>
     </header>
 
-    <form class="searchbar">
+    <form class="search-bar">
         CITY SEARCH:
-        <input type="text" id="city-input"><i class="search" id="search-button"></i>
+        <input type="text" id="city-input">
+        <button class="button" id="search-button">SEARCH</button>
+
     </form>
-    <ul class="list-group">
+
+    <ul class="list-group" id="city-list">
+    
 
 
     </ul>
@@ -40,7 +44,6 @@
                     <div class="temp"></div>
                     <div class="humidity"></div>
                     <div class="wind"></div>
-                    <div class="uvindex"></div>
                 </div>
             </div>
         </div>
@@ -48,68 +51,15 @@
     </div>
     <div class="day-forecast">5 Day Forecast:</div>
 
-    <div class="row" id="fiveDayDiv">
-        <div class="col-sm-12">
-        
-            <div class="row fivedayrow">
-                <div class="col-sm">
-                    <div class="card fivedaycard" style="width: 10rem; height: 14rem;">
-                        <div class="card-body fivedaycardcolor">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            
-                            <p class="card-text">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card fivedaycard" style="width: 10rem; height: 14rem;">
-                        <div class="card-body fivedaycardcolor">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            
-                            <p class="card-text">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card fivedaycard" style="width: 10rem; height: 14rem;">
-                        <div class="card-body fivedaycardcolor">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            
-                            <p class="card-text">
-
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm">
-                    <div class="card fivedaycard" style="width: 10rem; height: 14rem;">
-                        <div class="card-body fivedaycardcolor">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            
-                            <p class="card-text">
-
-                        </div>
-                    </div> 
-                </div>
-                <div class="col-sm">
-                    <div class="card fivedaycard" style="width: 10rem; height: 14rem;">
-                        <div class="card-body fivedaycardcolor">
-                            <h5 class="card-title">Card title</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
-                            
-                            <p class="card-text">
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div id="boxes">
+        <div class="box" id="box1">Tomorrow</div>
+        <div class="box" id="box2">After Tomorrow</div>
+        <div class="box" id="box3">Later this week</div>
+        <div class="box" id="box4">Later this week</div>
+        <div class="box" id="box5">Later this week</div>
     </div>
+
+    
 </div>
     
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
