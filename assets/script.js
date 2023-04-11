@@ -1,3 +1,4 @@
+
 var timer = document.querySelector("#currentTime")
 $("#currentDay").html(timer);
 
@@ -19,7 +20,7 @@ var cityLocation = document.getElementById("city-location");
 var cityInput = document.querySelector("#city-input")
 var savedCity = localStorage.getItem("city");
 var cityList = document.querySelector("#city-list");
-var savedCities = JSON.parse(localStorage.getItem("saveCities")) || [];
+var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
 
 function getWeather(city) {
@@ -63,25 +64,31 @@ function getWeather(city) {
     })
 }
 
+
+
+savedCities.forEach(city => {
+  if(cityList.childElementCount < 4) {
+  const listItem = document.createElement("button");
+  listItem.className = "list-group-item";
+  listItem.textContent = city;
+
+  listItem.addEventListener("click", () => {
+    getWeather(city, APIkey);
+    cityLocation.textContent = city;
+  });
+  cityList.appendChild(listItem);
+}
+});
+
 function saveCityLS(city) {
   savedCity = city;
   var cities = JSON.parse(localStorage.getItem("cities")) || [];
   cities.push(city);
   localStorage.setItem("cities", JSON.stringify(cities));
+  localStorage.setItem("city", city);
+
 }
-
-savedCities.forEach(city => {
-  const listItem = document.createElement('li');
-  listItem.className = 'list-group-item';
-  listItem.textContent = city;
-
-  listItem.addEventListener("click", () => {
-    getWeather(city);
-  });
-  cityList.appendChild(listItem);
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("load", () => {
   if (savedCity) {
     getWeather(savedCity);
   }
@@ -92,6 +99,14 @@ searchBar.addEventListener("submit", (event) => {
   cityInput.value;
   console.log(cityInput.value);
   saveCityLS(cityInput.value);
+  const newCityButton = document.createElement("button");
+  newCityButton.className = 'list-group-item';
+  newCityButton.textContent = cityInput.value;
+  newCityButton.addEventListener("click", () => {
+    getWeather(city, APIkey);
+    cityLocation.textContent = cityInput.value;
+  });
+  cityList.appendChild(newCityButton);
   getWeather(cityInput.value);
   savedCity = cityInput.value;
 });
