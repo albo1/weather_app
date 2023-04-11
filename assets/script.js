@@ -17,7 +17,7 @@ var newCityButton;
 var searchButton = document.getElementById("search-button");
 var searchBar = document.querySelector(".search-bar");
 var searchInput = document.getElementById("forecast");
-var cityLocation = document.getElementById("city-location");
+var cityLocation = document.querySelector("#city-location");
 var cityInput = document.querySelector("#city-input")
 var savedCity = localStorage.getItem("city");
 var cityList = document.querySelector("#city-list");
@@ -85,30 +85,19 @@ window.addEventListener("load", () => {
     listItem.textContent = city;
     listItem.addEventListener("click", () => {
       getWeather(city, APIkey);
-      cityLocation.textContent = city;
+      cityLocation.textContent = cityInput.value;
     });
     cityList.appendChild(listItem);
   }
-
 });
 
-// cityList.addEventListener("click", (event) => {
-//   if (event.target.classlist.contain("list-group-item")) {
-//     getWeather(cityInput.value, APIkey)
-//   if (cityLocation) {
-//     cityLocation.textContent = cityInput.value;
-//   }
-//   }
-  
-// });
-
-// newCityButton.addEventListener("click",() => {
-//   getWeather(cityInput.value, APIkey);
-//   if (cityLocation) {
-//     cityLocation.textContent = cityInput.value;
-//   }
-// });
-
+cityList.addEventListener("click", (event) => {
+  if (event.target && event.target.nodeName === "BUTTON") {
+    var city = event.target.textContent;
+    getWeather(city, APIkey);
+    cityLocation.textContent = city;
+  }
+});
 
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
