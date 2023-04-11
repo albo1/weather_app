@@ -101,16 +101,17 @@ cityList.addEventListener("click", (event) => {
 
 searchBar.addEventListener("submit", (event) => {
   event.preventDefault();
-  cityInput.value;
-  console.log(cityInput.value);
-  saveCityLS(cityInput.value);
+  const cityInput = document.querySelector("#cityInput");
+  const city = cityInput.value;
+  console.log(city);
+  saveCityLS(city);
 
   const newCityButton = document.createElement("button");
   newCityButton.className = 'list-group-item';
-  newCityButton.textContent = cityInput.value;
+  newCityButton.textContent = city;
   newCityButton.addEventListener("click", () => {
-    getWeather(cityInput.value, APIkey);
-    cityLocation.textContent = cityInput.value;
+    getWeather(city, APIkey);
+    cityLocation.textContent = city;
   });
 
   cityList.appendChild(newCityButton);
@@ -118,6 +119,7 @@ searchBar.addEventListener("submit", (event) => {
     cityList.removeChild(cityList.firstChild);
   }
 
-  getWeather(cityInput.value);
-  savedCity = cityInput.value;
+  getWeather(city);
+  savedCity = city;
 });
+
