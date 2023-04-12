@@ -25,7 +25,7 @@ var savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
 
 
 function getWeather(city) {
-  var queryURL = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
+  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + APIkey;
   fetch(queryURL)
     .then(function (response) {
       return response.json();
